@@ -16,10 +16,11 @@ public class BestFitAlgorithm {
 
     public static void BestFit(int[] block, ArrayList<Long> MemoryBlockSize, ArrayList<SingleProcessNode> ProcessSize) {
 
+        //sorting in decreasing order so that small block come first
         Collections.sort(MemoryBlockSize);
-        int blockCount = 0;
+        int blockCount = 0;//calculating block count
         for (int i = 0; i < ProcessSize.size(); i++) {
-            Long size = ProcessSize.get(i).getSize();
+            Long size = ProcessSize.get(i).getSize();//geting size of processs
 
             for (int j = 0; j < MemoryBlockSize.size(); j++) {
 
@@ -28,8 +29,8 @@ public class BestFitAlgorithm {
                     MemoryBlockSize.add(j, newBlock);
                     MemoryBlockSize.remove(j + 1);
 
-                    ProcessSize.get(i).setFragmentation(newBlock);
-                    block[blockCount] = j + 1;
+                    ProcessSize.get(i).setFragmentation(newBlock);//calculating fragmentation
+                    block[blockCount] = j + 1;//
                     blockCount++;
 
                     break;
