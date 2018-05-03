@@ -16,10 +16,11 @@ public class WorstFitAlgorithm {
 
     public static void WorstFit(int[] block, ArrayList<Long> MemoryBlockSize, ArrayList<SingleProcessNode> ProcessSize) {
 
+        //Sorting in Backwords so that big block come at first
         Collections.sort(MemoryBlockSize);
         Collections.reverse(MemoryBlockSize);
 
-        int blockCount = 0;
+        int blockCount = 0;   //check for block
         for (int i = 0; i < ProcessSize.size(); i++) {
             Long size = ProcessSize.get(i).getSize();
 
