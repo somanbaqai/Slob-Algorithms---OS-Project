@@ -1,4 +1,4 @@
-#Slob Algorithm
+# Slob Algorithm
 
 ## Prerequisites
 
